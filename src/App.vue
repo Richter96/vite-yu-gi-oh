@@ -29,9 +29,6 @@ export default {
         }
         )
     }
-
-
-
   },
   mounted() {
     this.callApi(this.store.yoGiHoUrl)
@@ -43,19 +40,9 @@ export default {
 <template>
   <div>
     <SiteHeader></SiteHeader>
-
     <SiteMain></SiteMain>
 
   </div>
 </template>
 
-<style lang="scss" >
-@use './assets/scss/partials/variables' as *;
-
-
-header {
-  img {
-    height: 5rem;
-  }
-}
-</style>
+<style lang="scss" ></style>
