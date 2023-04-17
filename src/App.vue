@@ -32,12 +32,30 @@ export default {
     
 <template>
   <div>
-    <h1 class=" text-uppercase"> {{ titolo }} </h1>
+    <!-- <SiteHead></SiteHead>
+                                                <Sitemain></Sitemain>
+                                                <SiteFooter></SiteFooter> -->
+    <header>
+      <div class=" container-md">
+        <img src="./assets/img/yo-logo.png" alt="logo yo-gi-ho">
+        <h1 class="text-uppercase"> {{ titolo }} </h1>
+      </div>
+    </header>
+    <div class="container">
+
+    </div>
+
   </div>
 </template>
 
-<style lang="scss" scoped>
-h1 {
-  color: red;
+<style lang="scss" >
+header {
+  h1 {
+    color: red;
+  }
+
+  img {
+    height: 100px;
+  }
 }
 </style>
