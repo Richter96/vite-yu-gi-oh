@@ -1,9 +1,11 @@
 <script>
 import { store } from '../store'
+import CardList from './CardList.vue'
 
 export default {
     name: 'SiteMain',
-    component: {
+    components: {
+        CardList
     },
     data() {
         return {
@@ -15,20 +17,27 @@ export default {
 
 <template>
     <main>
-        <div class="container">
-            <div class="row row-cols-md-3 row-cols-sm-2 row-cols-lg-4">
-                <div class="col" v-for="gameCard in store.gameCards" v-if="store.loading">
-                    <div class="card">
-                        <img :src="gameCard.card_images[0].image_url" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <span class="titleCard text-uppercase"> {{ gameCard.name }}</span>
-                            <span class=" d-block fs-6">origine: {{ gameCard.archetype }}</span>
-                            <p class="descriptionCard overflow-scroll">{{ gameCard.desc }}</p>
-                        </div>
-                    </div>
+        <div class="type_card d-flex">
+            <div class="container pb-0 ">
+                <select class="d-inline-block" name="archetype" id="archetypr">
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                    <option value="alien">Alien</option>
+                </select>
+                <div>
+                    <span v-if="store.gameCards">Trovate {{ store.gameCards.length }} carte</span>
                 </div>
             </div>
         </div>
+        <CardList />
     </main>
 </template>
 
@@ -37,13 +46,6 @@ export default {
 
 main {
     background-color: $bgBody;
-
-    .card {
-        .titleCard {
-            padding: 1rem 0;
-            text-align: center;
-        }
-    }
 
     .container {
         background-color: wheat;
