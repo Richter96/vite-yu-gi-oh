@@ -1,12 +1,12 @@
 
 <script>
 import axios from 'axios'
+import { store } from './components/store.js'
 export default {
   data() {
     return {
-      titolo: 'yo-gi-ho',
-      yoGiHoUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
-      gameCards: null
+      titolo: 'Yo-Gi-Oh',
+      store
     }
   },
   methods: {
@@ -14,7 +14,7 @@ export default {
       axios.get(url)
         .then(response => {
           console.log(response);
-          this.gameCards = response.data
+          this.store.gameCards = response.data.data
         })
         .catch(err => {
           console.log(err),
@@ -22,9 +22,10 @@ export default {
         }
         )
     }
+
   },
   mounted() {
-    this.callApi(this.yoGiHoUrl)
+    this.callApi(this.store.yoGiHoUrl)
   },
 }
 </script>
@@ -33,16 +34,30 @@ export default {
 <template>
   <div>
     <!-- <SiteHead></SiteHead>
-                                                <Sitemain></Sitemain>
-                                                <SiteFooter></SiteFooter> -->
+                                                                                                              <Sitemain></Sitemain>
+                                                                                                              <SiteFooter></SiteFooter> -->
     <header>
-      <div class=" container-md">
-        <img src="./assets/img/yo-logo.png" alt="logo yo-gi-ho">
-        <h1 class="text-uppercase"> {{ titolo }} </h1>
+      <div class=" container-md d-flex align-items-center">
+        <img src="./assets/img/yo-logo.png" alt="logo yo-gi-oh">
+        <h1 class=""> {{ titolo }} </h1>
       </div>
     </header>
-    <div class="container">
 
+    <div class="container">
+      <div class="row row-cols-5 row-cols-md-4 row-cols-sm-2">
+        <div class="col" v-for="gameCard in store.gameCards" v-if="store.loading">
+          <div class="card" style="width:18rem;">
+            <img :src="gameCard.card_images[0].image_url" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              b5
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -50,12 +65,9 @@ export default {
 
 <style lang="scss" >
 header {
-  h1 {
-    color: red;
-  }
 
   img {
-    height: 100px;
+    height: 5rem;
   }
 }
 </style>
