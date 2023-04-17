@@ -32,7 +32,7 @@ export default {
                     <option value="alien">Alien</option>
                     <option value="alien">Alien</option>
                 </select>
-                <div>
+                <div class="d-inline-block">
                     <span v-if="store.gameCards">Trovate {{ store.gameCards.length }} carte</span>
                 </div>
             </div>
@@ -48,7 +48,7 @@ main {
     background-color: $bgBody;
 
     .container {
-        background-color: wheat;
+        background-color: white;
         padding: 2rem;
     }
 

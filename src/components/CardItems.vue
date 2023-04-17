@@ -24,3 +24,24 @@ export default {
         </div>
     </div>
 </template>
+
+<style lang="scss">
+.col {
+    margin-bottom: 2rem;
+
+    .card {
+        height: 100%;
+
+
+        .titleCard {
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+}
+</style>

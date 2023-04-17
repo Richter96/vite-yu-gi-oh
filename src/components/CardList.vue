@@ -27,24 +27,6 @@ export default {
 </template>
 
 <style lang="scss">
-.card {
-    height: 100%;
-
-    .col {
-        margin-bottom: 1rem;
-    }
-
-    .titleCard {
-        padding: 1rem 0;
-        text-align: center;
-    }
-
-    img {
-        max-width: 100%;
-    }
-
-}
-
 .loader {
     border: 5px solid #f3f3f3;
     border-top: 5px solid #3498db;
