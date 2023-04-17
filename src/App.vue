@@ -22,6 +22,7 @@ export default {
         .then(response => {
           console.log(response);
           this.store.gameCards = response.data.data
+          store.loading = false
         })
         .catch(err => {
           console.log(err),
