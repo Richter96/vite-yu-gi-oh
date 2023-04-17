@@ -19,4 +19,12 @@ export default {
     </header>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+@use '../assets/scss/partials/variables' as *;
+
+header {
+    img {
+        height: 5rem;
+    }
+}
+</style>
