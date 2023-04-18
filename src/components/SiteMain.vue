@@ -31,7 +31,7 @@ main {
     background-color: $bgBody;
 
     .container {
-        background-color: white;
+        background-color: black;
         padding: 2rem;
     }
 
