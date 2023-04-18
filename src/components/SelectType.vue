@@ -25,7 +25,7 @@ export default {
         <div class="container pb-0 bg-light mt-1 rounded-2">
             <select class="d-inline-block" @change="store.callApi(store.yoGiHoUrl)" v-model="store.archetype">
                 <option value="">Select Archetype</option>
-                <option v-for="archetypeEl in store.allArchetype" value=" {{archetypeEl.archetype_name}} ">{{
+                <option v-for="archetypeEl in store.allArchetype" :value="archetypeEl.archetype_name">{{
                     archetypeEl.archetype_name }}</option>
             </select>
             <div class="d-inline-block">

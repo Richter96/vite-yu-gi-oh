@@ -3,7 +3,8 @@ import axios from 'axios'
 
 export const store = reactive({
     loading: true,
-    yoGiHoUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
+    // yoGiHoUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0', con limite di card
+    yoGiHoUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0',
     urlArchetype: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
     gameCards: null,
     allArchetype: null,
@@ -13,6 +14,7 @@ export const store = reactive({
 
 
         if (this.archetype !== '') {
+            // url += `&archetype=${this.archetype}`; con limite di card
             url += `&archetype=${this.archetype}`;
         }
 
