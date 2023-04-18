@@ -3,8 +3,10 @@ import axios from 'axios'
 
 export const store = reactive({
     loading: true,
-    yoGiHoUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
+    yoGiHoUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=5&offset=0',
+    urlArchetype: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
     gameCards: null,
+    allArchetype: null,
     meta: null,
     SelectType: "",
     callApi(url) {
@@ -20,7 +22,20 @@ export const store = reactive({
                     console.log(err.message)
             }
             )
+    },
+    getAllArchetype(url) {
+        axios.get(url)
+            .then(response => {
+                console.log(response)
+                store.allArchetype = response.data
+            })
+            .catch(err => {
+                console.log(err),
+                    console.log(err.message)
+            }
+            )
     }
+
 
 })
 
