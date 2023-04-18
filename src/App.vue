@@ -21,8 +21,9 @@ export default {
       axios.get(url)
         .then(response => {
           console.log(response);
-          this.store.gameCards = response.data.data
+          store.gameCards = response.data.data
           store.loading = false
+          store.meta = response.data.meta
         })
         .catch(err => {
           console.log(err),
@@ -32,7 +33,7 @@ export default {
     }
   },
   mounted() {
-    this.callApi(this.store.yoGiHoUrl)
+    this.callApi(store.yoGiHoUrl)
   },
 }
 </script>
