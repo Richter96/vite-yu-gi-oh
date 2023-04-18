@@ -1,4 +1,5 @@
 import { reactive } from 'vue'
+import axios from 'axios'
 
 export const store = reactive({
     loading: true,
@@ -6,7 +7,20 @@ export const store = reactive({
     gameCards: null,
     meta: null,
     SelectType: "",
-
+    callApi(url) {
+        axios.get(url)
+            .then(response => {
+                console.log(response);
+                store.gameCards = response.data.data
+                store.loading = false
+                store.meta = response.data.meta
+            })
+            .catch(err => {
+                console.log(err),
+                    console.log(err.message)
+            }
+            )
+    }
 
 })
 

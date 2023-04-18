@@ -14,6 +14,9 @@ export default {
             store
         }
     },
+    mounted() {
+        store.callApi(store.yoGiHoUrl)
+    },
 }
 </script>
 

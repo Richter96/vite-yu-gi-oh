@@ -18,7 +18,8 @@ export default {
     <div class="container">
         <div class="row row-cols-md-3 row-cols-sm-2 row-cols-lg-5 mb-2">
             <CardItem :gameCard="gameCard" v-for="gameCard in store.gameCards" v-if="!store.loading" />
-            <div v-else class="load">
+            <div v-else
+                 class="load bg-light rounded-2 w-100 d-flex justify-content-center align-items-baseline pt-2 text-danger">
                 <p class=" d-inline-block">Caricamento in corso ... </p>
                 <div class="loader d-inline-block"></div>
             </div>

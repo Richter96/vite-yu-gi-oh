@@ -15,10 +15,10 @@ export default {
 
 <template>
     <div class="col">
-        <div class="card">
-            <img :src="gameCard.card_images[0].image_url" class="card-img-top img-fluid" alt="...">
+        <div class="card text-white bg-dark">
+            <img :src="gameCard.card_images[0].image_url" class="card-img-top" alt="...">
             <div class="card-body">
-                <span class="titleCard text-uppercase"> {{ gameCard.name }}</span>
+                <span class="titleCard text-uppercase text-danger"> {{ gameCard.name }}</span>
                 <span class=" d-block fs-6">origine: {{ gameCard.archetype }}</span>
             </div>
         </div>
@@ -31,7 +31,7 @@ export default {
 
     .card {
         height: 100%;
-
+        box-shadow: 0 4px 8px 0 rgba(255, 97, 97, 0.463), 0 6px 20px 0 rgba(102, 203, 101, 0.592);
 
         .titleCard {
             padding: 1rem 0;
