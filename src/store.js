@@ -8,7 +8,7 @@ export const store = reactive({
     gameCards: null,
     allArchetype: null,
     meta: null,
-    SelectType: "",
+    selectArchetype: "",
     callApi(url) {
         axios.get(url)
             .then(response => {
