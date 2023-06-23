@@ -11,8 +11,6 @@ export const store = reactive({
     meta: null,
     archetype: "",
     callApi(url) {
-
-
         if (this.archetype !== '') {
             // url += `&archetype=${this.archetype}`; con limite di card
             url += `&archetype=${this.archetype}`;

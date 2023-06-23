@@ -4,7 +4,7 @@ export default {
     name: 'SiteHeader',
     data() {
         return {
-            titolo: 'Yo-Gi-Oh',
+            titolo: 'Call Api',
         }
     },
 }
@@ -13,7 +13,9 @@ export default {
 <template>
     <header>
         <div class=" container-md d-flex align-items-center">
-            <img src="../assets/img/yo-logo.png" alt="logo yo-gi-oh">
+            <div class="img_box">
+                <img class="img-fluid " src="../assets/img/yo-logo.png" alt="logo yo-gi-oh">
+            </div>
             <h1 class=""> {{ titolo }} </h1>
         </div>
     </header>
@@ -23,8 +25,21 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 header {
+    background-color: black;
+    color: white;
+
+    .img_box {
+        width: 250px;
+        aspect-ratio: 2/1;
+        height: 100px;
+        overflow-y: inherit;
+
+    }
+
     img {
-        height: 5rem;
+        max-height: 250px;
+        position: absolute;
+        top: -80px;
     }
 }
 </style>
